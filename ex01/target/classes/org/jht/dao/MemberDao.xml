@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="org.jht.dao.MemberDao">
+	<insert id="MemberInsert">
+		insert into tbl_member(id,password,name)
+		values(#{id},#{password},#{name})
+	</insert>
+	
+	<select id="Login" resultType="org.jht.model.MemberDTO">
+		select *
+		from tbl_member
+		where id=#{id}
+		and password=#{password}
+	</select>
+</mapper>
